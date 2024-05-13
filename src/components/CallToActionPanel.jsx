@@ -10,7 +10,7 @@ export default function CallToActionPanel({
   linkText,
 }) {
   return (
-    <div className=" w-full bg-orange-100 mt-20">
+    <div className="w-full bg-orange-100 mt-20">
       <div className="flex flex-col justify-center items-center w-3/4 m-auto h-[40vh]">
         <p className="text-4xl font-medium pb-5 ">{title}</p>
         <p className="text-lg font-light pb-5">{description}</p>

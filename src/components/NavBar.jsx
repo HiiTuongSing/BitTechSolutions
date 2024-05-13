@@ -7,7 +7,7 @@ export default function NavBar() {
       <div className="py-5 fixed w-full z-40">
         <nav className="flex w-3/4 m-auto justify-between items-center">
           <Link
-            className="px-5 text-xl hover:text-orange-400"
+            className="pe-5 text-xl hover:text-orange-400"
             to="/BitTechSolutions/"
           >
             <p>
