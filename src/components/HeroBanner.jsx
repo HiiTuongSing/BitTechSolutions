@@ -5,7 +5,7 @@ import React from "react";
 export default function HeroBanner({ imagePath, title, description }) {
   return (
     <>
-      <div className="relative h-[75vh]">
+      <div className="relative h-[75vh] w-3/4 m-auto">
         <img
           className="h-full w-full object-cover"
           src={imagePath}
