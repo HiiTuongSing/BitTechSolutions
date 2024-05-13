@@ -1,14 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import HeroBanner from "../components/HeroBanner";
+
+import HeroImage from "../images/pexels-kellie-churchman.jpg";
 
 export default function About() {
   return (
     <>
-      <h1>This is about page!</h1>
-      <br />
-      <Link className="text-blue-500" to="/BitTechSolutions/">
-        Home
-      </Link>
+      <HeroBanner
+        imagePath={HeroImage}
+        title="This is About Page!"
+        description="It consist of a <img> as background, and a <div> that overlaps it."
+      />
     </>
   );
 }

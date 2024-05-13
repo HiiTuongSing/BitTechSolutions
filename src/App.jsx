@@ -1,18 +1,19 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Pricing from "./pages/Pricing";
 
 export default function App() {
   return (
     <>
-      <div className="p-5">
-        <h1 className="text-3xl font-bold underline">Hello World</h1>
-      </div>
+      <NavBar />
       <Routes>
         <Route path="/BitTechSolutions/" element={<Home />}></Route>
         <Route path="/BitTechSolutions/about" element={<About />}></Route>
+        <Route path="/BitTechSolutions/pricing" element={<Pricing />}></Route>
       </Routes>
     </>
   );
