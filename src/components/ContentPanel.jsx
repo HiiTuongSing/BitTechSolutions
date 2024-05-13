@@ -22,11 +22,11 @@ import SecondaryButton from "./SecondaryButton";
 
 export default function ContentPanel({ title, contentArray }) {
   return (
-    <div className="w-3/4 m-auto pt-20 ">
-      <p className="text-center text-4xl font-medium pb-10">{title}</p>
+    <div className="w-3/4 m-auto pt-20">
+      <p className="text-center text-4xl font-medium">{title}</p>
       {contentArray.map((content, index) => (
         <div
-          className="flex h-[50vh] w-full my-10 py-10 rounded bg-orange-100 odd:flex-row-reverse odd:bg-orange-300"
+          className="flex h-[50vh] w-full my-10 py-10 rounded bg-orange-100 odd:flex-row-reverse odd:bg-orange-300 last:mb-0"
           key={index}
         >
           <div className="w-2/4 flex flex-col justify-center items-center">

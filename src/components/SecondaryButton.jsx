@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// <SecondaryButton linkPath="/BitTechSolutions" linkText="Learn More" />
+// <SecondaryButton linkPath="/BitTechSolutions/" linkText="Learn More" />
 
 export default function SecondaryButton({ linkPath, linkText }) {
   return (
