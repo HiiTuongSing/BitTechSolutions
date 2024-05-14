@@ -26,7 +26,7 @@ export default function ContentPanel({ title, contentArray }) {
       <p className="text-center text-4xl font-medium">{title}</p>
       {contentArray.map((content, index) => (
         <div
-          className="flex h-[50vh] w-full my-10 py-10 rounded bg-orange-100 odd:flex-row-reverse odd:bg-orange-300 last:mb-0"
+          className="flex h-[50vh] w-full my-10 py-10 rounded bg-orange-100 odd:flex-row-reverse odd:bg-orange-300 last:mb-0 fade-in-translate"
           key={index}
         >
           <div className="w-2/4 flex flex-col justify-center items-center">

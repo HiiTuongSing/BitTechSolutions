@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* animation */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in-translate {
+    &:nth-child(even) {
+      transform: translateX(10vw);
+      opacity: 0;
+      animation: fade-in-right 2s linear forwards;
+      animation-timeline: view(700px 200px);
+    }
+    &:nth-child(odd) {
+      transform: translateX(-10vw);
+      opacity: 0;
+      animation: fade-in-left 2s linear forwards;
+      animation-timeline: view(700px 200px);
+    }
+  }
+
+  @keyframes fade-in-right {
+    from {
+    }
+    to {
+      transform: translateX(0);
+      opacity: 100;
+    }
+  }
+
+  @keyframes fade-in-left {
+    from {
+    }
+    to {
+      transform: translateX(0);
+      opacity: 100;
+    }
+  }
+
+  .fancy-border {
+    animation: change-color 2s infinite linear;
+  }
+
+  @keyframes change-color {
+    0% {
+      border: 2px solid gold;
+    }
+    50% {
+      border: 2px solid white;
+    }
+    100% {
+      border: 2px solid gold;
+    }
+  }
+}

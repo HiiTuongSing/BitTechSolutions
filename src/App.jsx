@@ -16,6 +16,7 @@ export default function App() {
         <Route path="/BitTechSolutions/about" element={<About />}></Route>
         <Route path="/BitTechSolutions/pricing" element={<Pricing />}></Route>
       </Routes>
+
       <Footer />
     </>
   );
