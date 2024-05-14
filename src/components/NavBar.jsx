@@ -7,14 +7,14 @@ export default function NavBar() {
       <div className="py-5 fixed w-full z-40">
         <nav className="flex w-3/4 m-auto justify-between items-center">
           <Link
-            className="pe-5 text-xl hover:text-orange-400"
+            className="lg:pe-5 text-xl hover:text-orange-400"
             to="/BitTechSolutions/"
           >
             <p>
               <i class="fa-solid fa-gamepad"></i> Bit Tech Solutions
             </p>
           </Link>
-          <ul className="flex px-20">
+          <ul className="hidden px-20 lg:flex ">
             <li className="px-5 text-xl hover:text-orange-400">
               <Link to="/BitTechSolutions/pricing">Pricing</Link>
             </li>
@@ -22,7 +22,7 @@ export default function NavBar() {
               <Link to="/BitTechSolutions/about">About</Link>
             </li>
           </ul>
-          <ul className="flex ps-20">
+          <ul className="hidden lg:flex lg:ps-20">
             <li className="px-5">
               <Link
                 className="text-2xl hover:text-orange-400"
@@ -42,7 +42,7 @@ export default function NavBar() {
           </ul>
         </nav>
       </div>
-      <div className="h-24"></div>
+      <div className="h-16 lg:h-24"></div>
     </>
   );
 }

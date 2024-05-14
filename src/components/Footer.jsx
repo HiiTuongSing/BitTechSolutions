@@ -11,7 +11,7 @@ export default function Footer() {
         >
           <i className="fa-solid fa-gamepad"></i> Bit Tech Solutions
         </Link>
-        <ul className="flex ps-20">
+        <ul className="flex lg:ps-20">
           <li className="px-5">
             <Link
               className="text-2xl hover:text-orange-400"
@@ -31,8 +31,8 @@ export default function Footer() {
         </ul>
       </div>
       <hr></hr>
-      <div className="flex pt-5">
-        <div className="w-1/4 text-wrap me-5">
+      <div className="flex flex-wrap lg:flex-nowrap py-5">
+        <div className="w-full lg:w-1/4 text-wrap me-5 pb-5">
           <p className="text-lg font-light pb-5">
             Some long history about company, founded by a man that swicthed
             career and no one wants to hire him. As such he went on a long
@@ -53,7 +53,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="w-1/4 ps-5 border-s-2">
+        <div className="lg:w-1/4 pe-5 lg:pe-0 lg:ps-5 lg:border-s-2">
           <p className="text-xl font-semibold underline">Products</p>
           <p className="text-lg font-light">
             <Link
@@ -80,7 +80,7 @@ export default function Footer() {
             </Link>
           </p>
         </div>
-        <div className="w-1/4 ps-5 border-s-2">
+        <div className="lg:w-1/4 ps-5 pe-5 lg:pe-0 border-s-2">
           <p className="text-xl font-semibold underline">Pricings</p>
           <p className="text-lg font-light">
             <Link
@@ -107,7 +107,7 @@ export default function Footer() {
             </Link>
           </p>
         </div>
-        <div className="w-1/4 ps-5 border-s-2">
+        <div className="lg:w-1/4 ps-5 border-s-2">
           <p className="text-xl font-semibold underline">Others</p>
           <p className="text-lg font-light">
             <Link
@@ -135,6 +135,10 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <hr />
+      <p className="text-center font-light py-5">
+        <em>Powered by Dreams</em>
+      </p>
     </div>
   );
 }
