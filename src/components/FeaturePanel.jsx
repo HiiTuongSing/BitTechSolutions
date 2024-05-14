@@ -14,7 +14,10 @@ export default function FeaturePanel({ title, featureArray }) {
       <p className="text-4xl text-center font-medium pt-20">{title}</p>
       <div className="flex justify-center mt-10 rounded flex-wrap">
         {featureArray.map((feature, index) => (
-          <div className="flex flex-col justify-center items-center p-5 m-5 rounded bg-orange-300">
+          <div
+            key={index}
+            className="flex flex-col justify-center items-center p-5 m-5 rounded bg-orange-300"
+          >
             <img
               height="200"
               width="200"

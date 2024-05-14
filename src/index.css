@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dropdown */
+.dropdown {
+  .dropdown-content {
+    display: none;
+  }
+
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
+}
+
 /* animation */
 @media (prefers-reduced-motion: no-preference) {
   .fade-in-translate {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="w-3/4 m-auto h-[50vh] mt-20">
+    <div className="w-full px-5 md:px-0 md:w-3/4 m-auto h-[50vh] mt-20">
       <div className="flex justify-between">
         <Link
           className="pe-5 text-xl hover:text-orange-400"
