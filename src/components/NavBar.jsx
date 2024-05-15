@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 
@@ -20,9 +20,26 @@ export default function NavBar() {
     setIsClicked(!isClicked);
   };
 
+  const dropdownRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsClicked(false);
+      setIsCollapsed(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
-      <div className="py-5 fixed w-full z-30 bg-orange-500">
+      <div id="test" className="py-5 fixed w-full z-30 bg-orange-500">
         <nav className="flex w-full px-5 lg:px-0 lg:w-3/4 m-auto justify-between items-center">
           <Link
             className="lg:pe-5 text-xl hover:text-white w-3/4 lg:w-1/4"
@@ -46,15 +63,17 @@ export default function NavBar() {
               <ul className="px-20 flex ">
                 <li>
                   <div
-                    className="relative px-5 text-xl hover:text-white"
+                    className="relative px-5 text-xl cursor-pointer hover:text-white"
                     onClick={handleClick}
                   >
                     <p>
-                      Products{" "}
-                      <i className="fa-solid fa-caret-down cursor-pointer"></i>
+                      Products <i className="fa-solid fa-caret-down"></i>
                     </p>
                     {isClicked && (
-                      <div className="absolute bg-orange-300 p-5 rounded border-2 -left-5 w-[10vw]">
+                      <div
+                        ref={dropdownRef}
+                        className="absolute bg-orange-300 p-5 rounded border-2 -left-5 w-[10vw]"
+                      >
                         <p>
                           <Link
                             className="hover:text-black"
@@ -112,7 +131,10 @@ export default function NavBar() {
           )}
         </nav>
         {isCollapsed && isMobileView && (
-          <div className="flex flex-col justify-end items-start lg:w-3/4 justify-between ">
+          <div
+            ref={dropdownRef}
+            className="flex flex-col justify-end items-start lg:w-3/4 justify-between "
+          >
             <ul className="flex flex-col pt-5">
               <li>
                 <div
@@ -165,36 +187,7 @@ export default function NavBar() {
           </div>
         )}
       </div>
-      <div className="h-16 lg:h-24"></div>{" "}
+      <div className="h-16 lg:h-24"></div>
     </>
   );
-}
-
-{
-  /* <div className="w-3/4 m-auto h-20">
-      <h1>NavBar</h1>
-      {isMobileView ? (
-        <div id="collapse" className="relative" onClick={handleCollapse}>
-          <div>
-            <h1>Button</h1>
-          </div>
-          {isCollapsed && (
-            <div className="object-none absolute bg-orange-100 z-40">
-              <p>Test</p>
-              <p>Test</p>
-              <p>Test</p>
-            </div>
-          )}
-        </div>
-      ) : (
-        <nav>
-         
-          <div className="object-none absolute bg-orange-100 z-40">
-            <p>Test</p>
-            <p>Test</p>
-            <p>Test</p>
-          </div>
-        </nav>
-      )}
-    </div> */
 }
