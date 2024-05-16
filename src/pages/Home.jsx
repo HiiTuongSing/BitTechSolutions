@@ -8,6 +8,7 @@ import SmallCarousel from "../components/SmallCarousel";
 import BigCarousel from "../components/BigCarousel";
 
 import HeroImage from "../images/pexels-kellie-churchman.jpg";
+import LastImage from "../images/Jojo's Bizzare Adventure Diamond is Unbreakable.jpg";
 
 const contentArray = [
   {
@@ -36,12 +37,7 @@ const smallCarouselArray = [
   { imagePath: HeroImage },
   { imagePath: HeroImage },
   { imagePath: HeroImage },
-  { imagePath: HeroImage },
-  { imagePath: HeroImage },
-  { imagePath: HeroImage },
-  { imagePath: HeroImage },
-  { imagePath: HeroImage },
-  { imagePath: HeroImage },
+  { imagePath: LastImage },
 ];
 
 const bigCarouselArray = [

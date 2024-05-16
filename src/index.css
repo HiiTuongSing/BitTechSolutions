@@ -65,4 +65,24 @@
       opacity: 100;
     }
   }
+
+  .move-left {
+    animation: move-left 1s linear forwards;
+  }
+
+  @keyframes move-left {
+    to {
+      transform: translateX(200px);
+    }
+  }
+
+  .move-right {
+    animation: move-right 1s linear forwards;
+  }
+
+  @keyframes move-right {
+    to {
+      transform: translateX(-200px);
+    }
+  }
 }

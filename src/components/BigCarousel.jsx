@@ -18,24 +18,38 @@ import React, { useState, useRef, useEffect } from "react";
 export default function BigCarousel({ title, array }) {
   const [currentImg, setCurrentImg] = useState(0);
   const bigCarouselRef = useRef();
+  const intervalRef = useRef(null);
+
+  const fadeEffect = () => {
+    bigCarouselRef.current.classList.remove("fade");
+    void bigCarouselRef.current.offsetWidth;
+    bigCarouselRef.current.classList.add("fade");
+  };
 
   const nextImage = () => {
     if (currentImg < array.length - 1) {
       setCurrentImg(currentImg + 1);
-      bigCarouselRef.current.classList.remove("fade");
-      void bigCarouselRef.current.offsetWidth;
-      bigCarouselRef.current.classList.add("fade");
+      fadeEffect();
+    } else {
+      setCurrentImg(0);
+      fadeEffect();
     }
   };
 
   const previousImage = () => {
     if (currentImg > 0) {
       setCurrentImg(currentImg - 1);
-      bigCarouselRef.current.classList.remove("fade");
-      void bigCarouselRef.current.offsetWidth;
-      bigCarouselRef.current.classList.add("fade");
+      fadeEffect();
+    } else {
+      setCurrentImg(array.length - 1);
+      fadeEffect();
     }
   };
+
+  useEffect(() => {
+    intervalRef.current = setInterval(nextImage, 5000);
+    return () => clearInterval(intervalRef.current);
+  }, [currentImg]);
 
   return (
     <div className="w-full lg:w-2/4 m-auto mt-20">
